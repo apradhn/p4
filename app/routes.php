@@ -59,3 +59,22 @@ Route::get('/load/{load_id}', 'LoadController@show');
 Route::get('/load/{load_id}', 'LoadController@edit');
 Route::put('/load/{load_id}', 'LoadController@udpate');
 Route::delete('/load/{load_id}', 'LoadController@destroy');
+
+/*
+|--------------------------------------------------------------------------
+| Debug Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::get('mysql-test', function() {
+
+    # Print environment
+    echo 'Environment: '.App::environment().'<br>';
+
+    # Use the DB component to select all the databases
+    $results = DB::select('SHOW DATABASES;');
+
+    # If the "Pre" package is not installed, you should output using print_r instead
+    echo print_r($results);
+
+});
