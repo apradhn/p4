@@ -5,10 +5,21 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified Bootstrap CSS --> 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    	<!-- Latest compiled and minified Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>	
+		<!-- JQuery --> 
+		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 		<link href="{{ asset('css/starter-template.css') }}" rel="stylesheet">
-    	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    	<!-- <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+    	<!-- Material Design Bootstrap --> 
+    	<link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/material-wfont.min.css" rel="stylesheet">
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
     	@yield('head')
+
 	</head>
 	<body>
 	    <div class="navbar navbar-default navbar-fixed-top" role="navigation">

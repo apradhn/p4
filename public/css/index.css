@@ -12,15 +12,9 @@ h1 {
 }
 
 .btn-default {
-	border: 1px solid #F8F8F8;
-	background-color: #4DAF7C;
-	padding: 20px;
-	color: #F8F8F8;
 }
 
 .btn-default:hover {
-	border: 1px solid #F8F8F8;
-	color: #4DAF7C;
 }
 
 .row {
@@ -39,10 +33,14 @@ h1 {
   background-color: #D2D7D3;	
 }
 
-.jumbotron {
-	background-color: #4DAF7C;
+body .jumbotron {
+	background-color: #009688;
 	color: #F8F8F8;
 	margin-bottom: 0px;
+}
+
+.navbar, .navbar-default {
+	background-color: #00796B;
 }
 
 .content {
