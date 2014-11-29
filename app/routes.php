@@ -24,6 +24,10 @@ Route::get('/login', function() {
 	return View::make('login');
 });
 
+Route::get('/my-closet', function() {
+    return View::make('my-closet'); 
+});
+
 Route::get('/sign-out', function() {
 	return View::make('sign-out');
 });
