@@ -11,13 +11,13 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>	
 		<!-- JQuery --> 
 		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-		<link href="{{ asset('css/starter-template.css') }}" rel="stylesheet">
-    	<!-- <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> -->
+    	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     	<!-- Material Design Bootstrap --> 
     	<link href="css/ripples.min.css" rel="stylesheet">
         <link href="css/material-wfont.min.css" rel="stylesheet">
         <script src="js/ripples.min.js"></script>
         <script src="js/material.min.js"></script>
+        <link href="{{ asset('css/starter-template.css') }}" rel="stylesheet">
     	@yield('head')
 
 	</head>

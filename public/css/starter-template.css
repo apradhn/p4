@@ -4,9 +4,19 @@ body {
 }
 .starter-template {
   padding: 40px 15px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 label {
 	font-weight: normal;
+}
+
+body .jumbotron {
+	background-color: #009688;
+	color: #F8F8F8;
+	margin-bottom: 0px;
+}
+
+.navbar, .navbar-default {
+	background-color: #00796B;
 }
