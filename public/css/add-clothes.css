@@ -1,0 +1,21 @@
+.laundry-symbol {
+	float: right;
+	clear: right;
+}
+
+.radio.radio-primary {
+	height: 39px;
+}
+
+.form-horizontal .radio {
+	margin-bottom: 16px;
+}
+
+.color {
+	display: block;
+	margin: 8px auto;
+}
+
+.radio.radio-primary.col-md-4.item-color {
+	height: 60px;
+}

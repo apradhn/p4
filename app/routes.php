@@ -114,9 +114,24 @@ Route::get('/my-closet',
     )
 );
 
-Route::get('/sign-out', function() {
-	return View::make('sign-out');
-});
+Route::get('/add-clothes', 
+    array(
+        'before' => 'auth', 
+        function($format = 'html') {
+            return View::make('add-clothes');
+        }
+    )
+);
+
+# RESTful routes for Items 
+
+Route::get('/item', 'ItemController@index');
+Route::get('/item/create', 'ItemController@create');
+Route::post('/item', 'ItemController@store');
+Route::get('/item/{item_id}', 'ItemController@show');
+Route::get('/item/{item_id}/edit', 'ItemController@edit');
+Route::put('/item/{item_id}', 'ItemController@update');
+Route::delete('/item/{item_id}', 'ItemController@destroy');
 
 /*
 |--------------------------------------------------------------------------

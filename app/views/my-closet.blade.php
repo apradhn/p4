@@ -8,13 +8,12 @@
  	<div class="jumbotron">
 		<div class="container">
 			<h1>T.A.L.O.S.</h1>
-			<p>
-				<ol>
-					<li>Add Clothes to Closet</li>
-					<li>Select the Clothes You Want to Wash</li>
-					<li>Start Laundry</li>
-				</ol>
-			</p>
+			<p class="lead">Tactical Algorithmic Laundry Organizing Servant</p>
+			<ol>
+				<li>Add Clothes to Closet</li>
+				<li>Select the Clothes You Want to Wash</li>
+				<li>Start Laundry</li>
+			</ol>
 		</div>
     </div>
  	<div class="separator">
