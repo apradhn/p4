@@ -19,26 +19,26 @@
  @stop
 
  @section('content')
- 	<div class="row">
-	 	<div class="col-sm-6 col-sm-offset-2 col-md-6 col-md-offset-2 col-lg-6 col-lg-offset-2">
+	 	<div class="col-md-6 col-md-offset-2 well">
 	 		{{ Form::open(array('url' => '/login', 'method' => 'POST', 'name' => 'login', 'class' => 'form-horizontal')) }}
 	 			<div class="form-group">
-			 		<div class="col-sm-6 col-md-6  col-lg-6">
+	 				{{ Form::label('email', 'Email Address', array('class' => 'col-md-3 control-label')) }}
+			 		<div class="col-md-6">
 			 			{{ Form::text('email', 'Email Address', array('class' => 'form-control')) }}
 			 		</div>
 		 		</div>
 		 		<div class="form-group">
-		 			<div class="col-sm-6 col-md-6  col-lg-6">
+		 			{{ Form::label('password', 'Password', array('class' => 'col-md-3 control-label')) }}
+		 			<div class="col-md-6">
 		 				{{ Form::password('password', array('placeholder' => 'Password', 'class' => 'form-control')) }}
 		 			</div>
 		 		</div>
 		 		<div class="form-group">
-		 			<div class="col-sm-10 col-md-10 col-lg-10">
+		 			<div class="col-md-offset-1">
 		 				{{ Form::submit('LOG IN', array('class' => 'btn btn-primary')) }}
+		 				<a href="/sign-up"><div class="btn btn-warning">SIGN UP</div></a>
 		 			</div>
 		 		</div>
 		 	{{ Form::close() }}
-		 	<a href="/sign-up"><button class="btn btn-default">SIGN UP</button></a>
 		</div>
-	</div>
  @stop
