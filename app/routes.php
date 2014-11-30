@@ -31,6 +31,20 @@ Route::post('/sign-up',
     array(
         'before' => 'csrf', 
         function() {
+            $rules = array(
+                'email' => 'email|unique:users,email|required',
+                'password' => 'min:6|required'   
+            );        
+
+            $validator = Validator::make(Input::all(), $rules);
+
+            if($validator->fails()) {
+
+                return Redirect::to('/sign-up')
+                    ->with('flash_message', 'Sign up failed; please fix the errors listed below.')
+                    ->withInput()
+                    ->withErrors($validator);
+            }
 
             $user = new User;
             $user->email    = Input::get('email');
@@ -42,7 +56,7 @@ Route::post('/sign-up',
             }
             # Fail
             catch (Exception $e) {
-                return Redirect::to('/signup')->with('flash_message', 'Sign up failed; please try again.')->withInput();
+                return Redirect::to('/sign-up')->with('flash_message', 'Sign up failed; please try again.')->withInput();
             }
 
             # Log the user in
@@ -90,6 +104,7 @@ Route::get('/logout', function() {
 
 });
 
+# Display's user's closet 
 Route::get('/my-closet',
     array( 
         'before' => 'auth', 
