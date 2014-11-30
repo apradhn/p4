@@ -19,7 +19,7 @@
 
 @section('content')
 	<div class="col-md-6 col-md-offset-3">
-		{{ Form::open(array('url' => '/login', 'method' => 'POST', 'name' => 'login', 'class' => 'form-horizontal')) }}
+		{{ Form::open(array('url' => '/sign-up', 'method' => 'POST', 'name' => 'login', 'class' => 'form-horizontal')) }}
 			<fieldset>
 				<legend>Sign Up</legend>
 				<div class="form-group">

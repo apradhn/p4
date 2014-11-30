@@ -39,13 +39,21 @@
 	            <li><a href="http://p2.apradhan.me">p2</a></li>
 	            <li><a href="http://p3.apradhan.me">p3</a></li>
 	            <li class="active"><a href="/">p4</a></li>
+				@if(Auth::check())
+				    <li><a href='/logout'>Log out {{ Auth::user()->email; }}</a></li>
+				@endif	            
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
 	    </div>	
 
 	    @yield('masthead')
-
+	    @if(Session::get('flash_message'))
+	        <div class='alert alert-dismissable alert-info'>
+	        <button type="button" class="close" data-dismiss="alert">x</button>
+	        {{ Session::get('flash_message') }}
+	        </div>
+	    @endif
   		<div class="starter-template">
   			@yield('content')
       	</div>
