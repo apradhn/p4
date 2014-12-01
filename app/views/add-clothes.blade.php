@@ -23,7 +23,7 @@
 
 @section ('content')
 	<div class="col-md-8 col-md-offset-2 well">
-		{{ Form::open(array('url' => '/sign-up', 'method' => 'POST', 'name' => 'login', 'class' => 'form-horizontal')) }}
+		{{ Form::open(array('url' => '/item', 'method' => 'POST', 'name' => 'add-clothes', 'class' => 'form-horizontal')) }}
 			<fieldset>
 				<legend>New Item</legend>
 				<div class="form-group">

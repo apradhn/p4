@@ -31,7 +31,18 @@ class ItemController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		# Instantiate a new Item model class 
+		$item = new Item(); 
+
+		# Set
+		$item->name = Input::get('name');
+		$item->washing_instructions = Input::get('wash');
+		$item->drying_instructions = Input::get('dry');
+		$item->color = Input::get('color');
+
+		$item->save();
+
+		return Redirect::to('/my-closet')->with('flash_message', 'New item added to closet!');
 	}
 
 
