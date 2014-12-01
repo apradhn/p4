@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('login');
-});
+Route::get('/',
+    array(
+        'before' => 'auth',
+         function($format = 'html') {
+            return View::make('my-closet'); 
+        }       
+    )
+);
 
 # Displays the sign up form 
 Route::get('/sign-up',
