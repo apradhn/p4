@@ -42,7 +42,7 @@
 								<span class="check"></span>
 								Machine Wash Normal
 							</label>
-							<img src="images/mwNORMAL.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/mwNORMAL.jpg') }}" class="laundry-symbol">								
 						</div>					
 						<div class="radio radio-primary">
 							<label>
@@ -52,8 +52,8 @@
 								Machine Wash Cold
 							</label>
 							<div class="laundry-symbol">
-								<img src="images/mwCOLD.jpg">
-								<img src="images/mw30c.jpg">
+								<img src="{{ asset('images/mwCOLD.jpg') }}">
+								<img src="{{ asset('images/mw30c.jpg') }}">
 							</div>								
 						</div>
 						<div class="radio radio-primary">
@@ -64,8 +64,8 @@
 								Machine Wash Warm
 							</label>
 							<div class="laundry-symbol">
-								<img src="images/mwWARM.jpg">
-								<img src="images/mw40c.jpg">
+								<img src="{{ asset('images/mwWARM.jpg') }}">
+								<img src="{{ asset ('images/mw40c.jpg') }}">
 							</div>																	
 						</div>
 						<div class="radio radio-primary">
@@ -76,8 +76,8 @@
 								Machine Wash Hot
 							</label>
 							<div class="laundry-symbol">
-								<img src="images/mwHOT.jpg">
-								<img src="images/mw50c.jpg">
+								<img src="{{ asset('images/mwHOT.jpg') }}">
+								<img src="{{ asset('images/mw50c.jpg') }}">
 							</div>																
 						</div>	
 						<div class="radio radio-primary">
@@ -87,7 +87,7 @@
 								<span class="check"></span>
 								Machine Wash Cold, Permanent Press
 							</label>
-							<img src="images/mwCOLDpp.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/mwCOLDpp.jpg') }}" class="laundry-symbol">								
 						</div>	
 						<div class="radio radio-primary">
 							<label>
@@ -96,7 +96,7 @@
 								<span class="check"></span>
 								Machine Wash Warm, Permanent Press
 							</label>
-							<img src="images/mwWARMpp.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/mwWARMpp.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -105,7 +105,7 @@
 								<span class="check"></span>
 								Machine Wash Hot, Permanent Press
 							</label>
-							<img src="images/mwHOTpp.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/mwHOTpp.jpg') }}" class="laundry-symbol">								
 						</div>																																			
 					</div>
 				</div>
@@ -119,7 +119,7 @@
 								<span class="check"></span>
 								Tumble Dry, Normal
 							</label>
-							<img src="images/tdNormal.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdNormal.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -128,7 +128,7 @@
 								<span class="check"></span>
 								Tumble Dry, No Heat
 							</label>
-							<img src="images/tdNoHeat.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdNoHeat.jpg') }}" class="laundry-symbol">								
 						</div>	
 						<div class="radio radio-primary">
 							<label>
@@ -137,7 +137,7 @@
 								<span class="check"></span>
 								Tumble Dry, Low Heat
 							</label>
-							<img src="images/tdLowHeat.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdLowHeat.jpg') }}" class="laundry-symbol">								
 						</div>	
 						<div class="radio radio-primary">
 							<label>
@@ -146,7 +146,7 @@
 								<span class="check"></span>
 								Tumble Dry, Medium
 							</label>
-							<img src="images/tdMedium.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdMedium.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -155,7 +155,7 @@
 								<span class="check"></span>
 								Tumble Dry, High
 							</label>
-							<img src="images/tdHigh.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdHigh.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -164,7 +164,7 @@
 								<span class="check"></span>
 								Tumble Dry, Permanent Press, No Heat
 							</label>
-							<img src="images/tdNoHeatpp.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdNoHeatpp.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -173,7 +173,7 @@
 								<span class="check"></span>
 								Tumble Dry, Permanent Press, Low Heat
 							</label>
-							<img src="images/tdLowHeatpp.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdLowHeatpp.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -182,7 +182,7 @@
 								<span class="check"></span>
 								Tumble Dry, Permanent Press, Medium
 							</label>
-							<img src="images/tdMediumpp.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdMediumpp.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -191,7 +191,7 @@
 								<span class="check"></span>
 								Tumble Dry, Gentle Cycle, No Heat
 							</label>
-							<img src="images/tdNoHeatGentle.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdNoHeatGentle.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -200,7 +200,7 @@
 								<span class="check"></span>
 								Tumble Dry, Gentle Cycle, Low Heat
 							</label>
-							<img src="images/tdLowHeatGentle.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdLowHeatGentle.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -209,7 +209,7 @@
 								<span class="check"></span>
 								Tumble Dry, Gentle Cycle, Medium
 							</label>
-							<img src="images/tdMediumGentle.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/tdMediumGentle.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -218,7 +218,7 @@
 								<span class="check"></span>
 								Line Dry
 							</label>
-							<img src="images/LineDry.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/LineDry.jpg') }}" class="laundry-symbol">								
 						</div>
 						<div class="radio radio-primary">
 							<label>
@@ -227,7 +227,7 @@
 								<span class="check"></span>
 								Drip Dry
 							</label>
-							<img src="images/DripDry.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/DripDry.jpg') }}" class="laundry-symbol">								
 						</div>	
 						<div class="radio radio-primary">
 							<label>
@@ -236,7 +236,7 @@
 								<span class="check"></span>
 								Dry Flat
 							</label>
-							<img src="images/DryFlat.jpg" class="laundry-symbol">								
+							<img src="{{ asset('images/DryFlat.jpg') }}" class="laundry-symbol">								
 						</div>																																																																																														
 					</div>															
 				</div>
@@ -250,7 +250,7 @@
 								<span class="check"></span>
 								Red
 							</label>
-							<img src="images/item_colors/red.png" class="color">								
+							<img src="{{ asset('images/item_colors/red.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -259,7 +259,7 @@
 								<span class="check"></span>
 								Pink
 							</label>
-							<img src="images/item_colors/pink.png" class="color">								
+							<img src="{{ asset('images/item_colors/pink.png') }}" class="color">								
 						</div>		
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -268,7 +268,7 @@
 								<span class="check"></span>
 								Purple
 							</label>
-							<img src="images/item_colors/purple.png" class="color">								
+							<img src="{{ asset('images/item_colors/purple.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -277,7 +277,7 @@
 								<span class="check"></span>
 								Deep Purple
 							</label>
-							<img src="images/item_colors/deeppurple.png" class="color">								
+							<img src="{{ asset('images/item_colors/deeppurple.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -286,7 +286,7 @@
 								<span class="check"></span>
 								Indigo 
 							</label>
-							<img src="images/item_colors/indigo.png" class="color">								
+							<img src="{{ asset('images/item_colors/indigo.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -295,7 +295,7 @@
 								<span class="check"></span>
 								Blue 
 							</label>
-							<img src="images/item_colors/blue.png" class="color">								
+							<img src="{{ asset('images/item_colors/blue.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -304,7 +304,7 @@
 								<span class="check"></span>
 								Light Blue 
 							</label>
-							<img src="images/item_colors/lightblue.png" class="color">								
+							<img src="{{ asset('images/item_colors/lightblue.png') }}" class="color">								
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -313,7 +313,7 @@
 								<span class="check"></span>
 								Cyan 
 							</label>
-							<img src="images/item_colors/cyan.png" class="color">								
+							<img src="{{ asset('images/item_colors/cyan.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -322,7 +322,7 @@
 								<span class="check"></span>
 								Teal 
 							</label>
-							<img src="images/item_colors/teal.png" class="color">								
+							<img src="{{ asset('images/item_colors/teal.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -331,7 +331,7 @@
 								<span class="check"></span>
 								Green 
 							</label>
-							<img src="images/item_colors/green.png" class="color">								
+							<img src="{{ asset('images/item_colors/green.png') }}" class="color">								
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -340,7 +340,7 @@
 								<span class="check"></span>
 								Light Green 
 							</label>
-							<img src="images/item_colors/lightgreen.png" class="color">								
+							<img src="{{ asset('images/item_colors/lightgreen.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -349,7 +349,7 @@
 								<span class="check"></span>
 								Lime  
 							</label>
-							<img src="images/item_colors/lime.png" class="color">								
+							<img src="{{ asset('images/item_colors/lime.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -358,7 +358,7 @@
 								<span class="check"></span>
 								Yellow  
 							</label>
-							<img src="images/item_colors/yellow.png" class="color">								
+							<img src="{{ asset('images/item_colors/yellow.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -367,7 +367,7 @@
 								<span class="check"></span>
 								Amber  
 							</label>
-							<img src="images/item_colors/amber.png" class="color">								
+							<img src="{{ asset('images/item_colors/amber.png') }}" class="color">								
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -376,7 +376,7 @@
 								<span class="check"></span>
 								Orange  
 							</label>
-							<img src="images/item_colors/orange.png" class="color">								
+							<img src="{{ asset('images/item_colors/orange.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -385,7 +385,7 @@
 								<span class="check"></span>
 								Deep Orange  
 							</label>
-							<img src="images/item_colors/deeporange.png" class="color">								
+							<img src="{{ asset('images/item_colors/deeporange.png') }}" class="color">								
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -394,7 +394,7 @@
 								<span class="check"></span>
 								Brown  
 							</label>
-							<img src="images/item_colors/brown.png" class="color">								
+							<img src="{{ asset('images/item_colors/brown.png') }}" class="color">								
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -403,7 +403,7 @@
 								<span class="check"></span>
 								Blue Grey  
 							</label>
-							<img src="images/item_colors/bluegrey.png" class="color">								
+							<img src="{{ asset('images/item_colors/bluegrey.png') }}" class="color">								
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -412,7 +412,7 @@
 								<span class="check"></span>
 								Black  
 							</label>
-							<img src="images/item_colors/black.png" class="color">								
+							<img src="{{ asset('images/item_colors/black.png') }}" class="color">								
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -421,7 +421,7 @@
 								<span class="check"></span>
 								White  
 							</label>
-							<img src="images/item_colors/white.png" class="color">								
+							<img src="{{ asset('images/item_colors/white.png') }}" class="color">								
 						</div>																																																																																																																																																																								
 					</div>
 				</div>

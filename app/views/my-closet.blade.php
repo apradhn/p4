@@ -18,7 +18,7 @@
     </div>
  	<div class="separator">
  		<div class="separator-text col-md-6 col-md-offset-1">My Closet</div>
- 		<a href="/add-clothes"><button class="btn btn-danger btn-raised">ADD CLOTHES</button></a>
+ 		<a href="/item/create"><button class="btn btn-danger btn-raised">ADD CLOTHES</button></a>
  		<a href="/start-laundry"><button class="btn btn-success btn-raised">START LAUNDRY</button></a>
  	</div>   	
 @stop
