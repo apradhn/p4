@@ -24,5 +24,7 @@
 @stop
 
 @section ('content')
-
+	@foreach ($items as $item)
+		{{ $item->name.'<br>'; }}
+	@endforeach
 @stop

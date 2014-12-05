@@ -11,6 +11,13 @@
 |
 */
 
+Route::get('/item-test', function() {
+    $items = Item::all();
+    foreach($items as $item) {
+        echo $item->name;
+    }
+});
+
 Route::get('/',
     array(
         'before' => 'auth',
@@ -113,7 +120,19 @@ Route::get('/my-closet',
     array( 
         'before' => 'auth', 
         function($format = 'html') {
-            return View::make('my-closet'); 
+            # the all() method will fetch all rows from a Model/table
+            $items = Item::all();
+
+            $none = "no items found!";
+
+            # Make sure we have results before trying to print them
+            if($items->isEmpty() != TRUE) {
+                return View::make('my-closet')
+                    ->with('items', $items);
+            } else {
+                return View::make('my-closet')
+                    ->with('none', $none);
+            }
         }
     )
 );
