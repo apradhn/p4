@@ -24,13 +24,17 @@
 @stop
 
 @section ('content')
-	@foreach ($items as $item)
-		<div class="well">
-			{{ $item->name; }}
-			<a href="/item/{{ $item->id }}/edit">edit</a>
-			{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
-				{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	
-			{{ Form::close() }}
-		</div>
-	@endforeach
+	@if (isset($item))
+		@foreach ($items as $item)
+			<div class="well">
+				{{ $item->name; }}
+				<a href="/item/{{ $item->id }}/edit">edit</a>
+				{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
+					{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	
+				{{ Form::close() }}
+			</div>
+		@endforeach
+	@else 
+		<div class="well">No Items!</div>
+	@endif
 @stop
