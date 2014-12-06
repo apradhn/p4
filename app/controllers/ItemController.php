@@ -102,7 +102,11 @@ class ItemController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$item = Item::find($id); 
+
+		$item->delete();
+
+		return Redirect::to('/my-closet')->with('flash_message', 'Item Updated!');			
 	}
 
 
