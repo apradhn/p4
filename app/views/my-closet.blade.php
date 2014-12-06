@@ -25,6 +25,9 @@
 
 @section ('content')
 	@foreach ($items as $item)
-		{{ $item->name.'<br>'; }}
+		<div class="well">
+			{{ $item->name; }}
+			<a href="/item/{{ $item->id }}/edit">edit</a>
+		</div>
 	@endforeach
 @stop

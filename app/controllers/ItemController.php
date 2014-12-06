@@ -66,7 +66,9 @@ class ItemController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$item = Item::find($id);
+		return View::make('edit-clothes')
+			->with('item', $item);
 	}
 
 
@@ -78,7 +80,17 @@ class ItemController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$item = Item::find($id);
+
+		# Set
+		$item->name = Input::get('name');
+		$item->washing_instructions = Input::get('wash');
+		$item->drying_instructions = Input::get('dry');
+		$item->color = Input::get('color');
+
+		$item->save();
+
+		return Redirect::to('/my-closet')->with('flash_message', 'Item Updated!');		
 	}
 
 
