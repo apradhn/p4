@@ -19,7 +19,8 @@
 
 @section('content')
 	<div class="col-md-6 col-md-offset-3 well">
-		{{ Form::open(array('url' => '/sign-up', 'method' => 'POST', 'name' => 'login', 'class' => 'form-horizontal')) }}
+
+		{{ Form::open(array('url' => '/signup', 'method' => 'POST', 'name' => 'login', 'class' => 'form-horizontal')) }}
 			<fieldset>
 				<legend>Sign Up</legend>
 				<div class="form-group">
@@ -41,6 +42,7 @@
 				</div>
 			</fieldset>
 		{{ Form::close() }}
+
 		@foreach($errors->all() as $message) 
 			<div class="col-md-6 col-md-offset-2">
 			    <div class='alert alert-dismissable alert-danger'>
@@ -49,5 +51,6 @@
 			    </div>
 		    </div>
 		@endforeach	
+
 	</div>
 @stop

@@ -36,7 +36,7 @@
 		 		<div class="form-group">
 		 			<div class="col-md-offset-1">
 		 				{{ Form::submit('LOG IN', array('class' => 'btn btn-primary')) }}
-		 				<a href="/sign-up"><div class="btn btn-warning">SIGN UP</div></a>
+		 				<a href="/signup"><div class="btn btn-warning">SIGN UP</div></a>
 		 			</div>
 		 		</div>
 		 	{{ Form::close() }}

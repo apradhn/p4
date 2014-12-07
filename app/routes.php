@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('/item-test', function() {
-    $items = Item::all();
-    foreach($items as $item) {
-        echo $item->name;
-    }
-});
-
 Route::get('/',
     array(
         'before' => 'auth',
@@ -28,93 +21,30 @@ Route::get('/',
     )
 );
 
-# Displays the sign up form 
-Route::get('/sign-up',
+Route::get('signup',
     array(
         'before' => 'guest',
-        function() {
-            return View::make('sign-up');
-        }
+        'uses' => 'UserController@getSignup'
     )
 );
 
-# Processes the sign up form 
-Route::post('/sign-up', 
+Route::post('/signup',
     array(
         'before' => 'csrf', 
-        function() {
-            $rules = array(
-                'email' => 'email|unique:users,email|required',
-                'password' => 'min:6|required'   
-            );        
-
-            $validator = Validator::make(Input::all(), $rules);
-
-            if($validator->fails()) {
-
-                return Redirect::to('/sign-up')
-                    ->with('flash_message', 'Sign up failed; please fix the errors listed below.')
-                    ->withInput()
-                    ->withErrors($validator);
-            }
-
-            $user = new User;
-            $user->email    = Input::get('email');
-            $user->password = Hash::make(Input::get('password'));
-
-            # Try to add the user 
-            try {
-                $user->save();
-            }
-            # Fail
-            catch (Exception $e) {
-                return Redirect::to('/sign-up')->with('flash_message', 'Sign up failed; please try again.')->withInput();
-            }
-
-            # Log the user in
-            Auth::login($user);
-
-            return Redirect::to('/my-closet')->with('flash_message', 'Welcome to TALOS!');
-
-        }
+        'uses' => 'UserController@postSignup'
     )
 );
 
-# Displays the login form 
-Route::get('/login', function() {
-	return View::make('login');
-});
+Route::get('/login', 'UserController@getLogin');
 
-# Processes the login form 
-Route::post('/login', 
+Route::post('/login',
     array(
-        'before' => 'csrf', 
-        function() {
-
-            $credentials = Input::only('email', 'password');
-
-            if (Auth::attempt($credentials, $remember = true)) {
-                return Redirect::intended('/my-closet')->with('flash_message', 'Welcome Back!');
-            }
-            else {
-                return Redirect::to('/login')->with('flash_message', 'Log in failed; please try again.');
-            }
-
-            return Redirect::to('login');
-        }
+        'before' => 'csrf',
+        'uses' => 'UserController@postLogin'
     )
 );
 
-# Logs out the user 
-Route::get('/logout', function() {
-
-    # Log out
-    Auth::logout();
-
-    # Send them to the homepage
-    return Redirect::to('/');
-
-});
+Route::get('/logout', 'UserController@logout');
 
 # Display's user's closet 
 Route::get('/my-closet',
