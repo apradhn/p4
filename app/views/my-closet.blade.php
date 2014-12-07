@@ -4,6 +4,10 @@
 	My Closet
 @stop
 
+@section('head')
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/my-closet.css') }}">
+@stop
+
 @section ('masthead')
  	<div class="jumbotron">
 		<div class="container">
@@ -18,8 +22,8 @@
     </div>
  	<div class="separator">
  		<div class="separator-text col-md-6 col-md-offset-1">My Closet</div>
- 		<a href="/item/create"><button class="btn btn-danger btn-raised">ADD CLOTHES</button></a>
- 		<a href="/start-laundry"><button class="btn btn-success btn-raised">START LAUNDRY</button></a>
+ 		<a href="/item/create"><button class="btn btn-primary btn-raised">ADD CLOTHES</button></a>
+ 		<a href="/start-laundry"><button class="btn btn-primary btn-raised">START LAUNDRY</button></a>
  	</div>   	
 @stop
 
@@ -27,12 +31,16 @@
 	@if(isset($items))
 		@foreach ($items as $item)
 			<div class="well col-md-8 col-md-offset-2">
-				<img src="{{ asset($item->color_url) }}">
-				{{ $item->name; }}
-				<a href="/item/{{ $item->id }}/edit">edit</a>
-				{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
-					{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	
-				{{ Form::close() }}
+				<img class="swatch" src="{{ asset($item->color_url) }}">
+				<span class="item-name">{{ $item->name; }}</span>
+				<div class="modify-buttons">
+					<a class ="btn btn-link" href="/item/{{ $item->id }}/edit">EDIT</a>
+					<div class="delete">
+						{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
+							{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	
+						{{ Form::close() }}
+					<div>
+				</div>
 			</div>
 		@endforeach
 	@endif

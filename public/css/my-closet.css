@@ -1,0 +1,15 @@
+.swatch {
+}
+
+.item-name {
+	margin-left: 24px;
+	font-size: 16px;
+}
+
+.modify-buttons {
+	float: right;
+}
+
+.delete, .delete > form {
+	display: inline;
+}
