@@ -26,7 +26,8 @@
 @section ('content')
 	@if(isset($items))
 		@foreach ($items as $item)
-			<div class="well">
+			<div class="well col-md-8 col-md-offset-2">
+				<img src="{{ asset($item->color_url) }}">
 				{{ $item->name; }}
 				<a href="/item/{{ $item->id }}/edit">edit</a>
 				{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
@@ -37,6 +38,6 @@
 	@endif
 
 	@if(isset($none))
-		<div class="well">{{ $none }}</div>
+		<div class="well col-md-8 col-md-offset-2">{{ $none }}</div>
 	@endif
 @stop

@@ -8,3 +8,4 @@ class Item extends Eloquent {
 		return $this->belongsTo('User');
 	}
 }
+
