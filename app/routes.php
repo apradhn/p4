@@ -11,6 +11,7 @@
 |
 */
 
+# Directs user to my-closet, directs guest to login 
 Route::get('/',
     array(
         'before' => 'auth',
@@ -68,15 +69,6 @@ Route::get('/my-closet',
                 return View::make('my-closet')
                     ->with('none', $none);
             }
-        }
-    )
-);
-
-Route::get('/add-clothes', 
-    array(
-        'before' => 'auth', 
-        function($format = 'html') {
-            return View::make('add-clothes');
         }
     )
 );

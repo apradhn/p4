@@ -2,17 +2,12 @@
 
 class UserController extends BaseController {
 
-    # GET: http://localhost/user
-    public function getIndex() {
-
-    }
-
-    # GET: http://localhost/user/signup
+    # GET: http://localhost/signup
     public function getSignup() {
         return View::make('sign-up');
     }
 
-    # POST: http://localhost/user/signup
+    # POST: http://localhost/signup
     public function postSignup() {
         $rules = array(
             'email' => 'email|unique:users,email|required',
@@ -49,12 +44,12 @@ class UserController extends BaseController {
 
     }
 
-    # GET: http://localhost/user/login
+    # GET: http://localhost/login
     public function getLogin() {
         return View::make('login');
     }
 
-    # POST: http://localhost/user/login
+    # POST: http://localhost/login
     public function postLogin() {
         $credentials = Input::only('email', 'password');
 
@@ -68,18 +63,13 @@ class UserController extends BaseController {
         return Redirect::to('login');
     }
 
-    # ANY: http://localhost/user/logout
+    # ANY: http://localhost/logout
     public function logout() {
         # Log out
         Auth::logout();
 
         # Send them to the homepage
         return Redirect::to('/');     
-    }
-
-    # GET: http://localhost/user/generate-new-password
-    public function getGenerateNewPassword() {
-
     }
 
 }
