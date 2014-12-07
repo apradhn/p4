@@ -24,7 +24,7 @@
 @stop
 
 @section ('content')
-	@if (isset($item))
+	@if(isset($items))
 		@foreach ($items as $item)
 			<div class="well">
 				{{ $item->name; }}
@@ -34,7 +34,9 @@
 				{{ Form::close() }}
 			</div>
 		@endforeach
-	@else 
-		<div class="well">No Items!</div>
+	@endif
+
+	@if(isset($none))
+		<div class="well">{{ $none }}</div>
 	@endif
 @stop

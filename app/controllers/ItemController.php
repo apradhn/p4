@@ -31,6 +31,8 @@ class ItemController extends \BaseController {
 	 */
 	public function store()
 	{
+		$user = Auth::user();
+
 		# Instantiate a new Item model class 
 		$item = new Item(); 
 
@@ -39,6 +41,7 @@ class ItemController extends \BaseController {
 		$item->washing_instructions = Input::get('wash');
 		$item->drying_instructions = Input::get('dry');
 		$item->color = Input::get('color');
+		$item->user()->associate($user); # <-- Associate the user with this item
 
 		$item->save();
 

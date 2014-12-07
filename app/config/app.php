@@ -94,7 +94,8 @@ return array(
 	*/
 
 	'providers' => array(
-
+		
+		'Barryvdh\Debugbar\ServiceProvider',
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',

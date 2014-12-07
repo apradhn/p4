@@ -22,7 +22,8 @@ Route::get('/',
     array(
         'before' => 'auth',
          function($format = 'html') {
-            return View::make('my-closet'); 
+            return Redirect::to('/my-closet')
+                ->with('flash_message', 'Welcome Back!'); 
         }       
     )
 );
@@ -120,10 +121,14 @@ Route::get('/my-closet',
     array( 
         'before' => 'auth', 
         function($format = 'html') {
-            # the all() method will fetch all rows from a Model/table
-            $items = Item::all();
+            # Fetch all items added by the user
+            $user = Auth::user()->id;
 
-            $none = "no items found!";
+            $items = Item::where('user_id', '=', $user)->get();
+
+            # $items = Item::all();
+
+            $none = "No items yet!";
 
             # Make sure we have results before trying to print them
             if($items->isEmpty() != TRUE) {
@@ -240,4 +245,11 @@ Route::get('/debug', function() {
 
     echo '</pre>';
 
+});
+
+Route::get('/truncate', function() {
+
+    # Clear the tables to a blank slate
+    DB::statement('SET FOREIGN_KEY_CHECKS=0'); # Disable FK constraints so that all rows can be deleted, even if there's an associated FK
+    DB::statement('TRUNCATE items');
 });
