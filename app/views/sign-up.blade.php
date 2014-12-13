@@ -24,9 +24,15 @@
 			<fieldset>
 				<legend>Sign Up</legend>
 				<div class="form-group">
+					{{ Form::label('name', 'Name', array('class' => 'col-md-3 control-label')) }}
+					<div class="col-md-6">
+						{{ Form::text('name', '', array('placeholder' => 'Name', 'class' => 'form-control')) }}
+					</div>
+				</div>
+				<div class="form-group">
 					{{ Form::label('email', 'Email Address', array('class' => 'col-md-3 control-label')) }}
 					<div class="col-md-6">
-						{{ Form::email('email', 'Email Address', array('class' => 'form-control')) }}
+						{{ Form::email('email', '', array('placeholder' => 'Email Address', 'class' => 'form-control')) }}
 					</div>
 				</div>
 				<div class="form-group">

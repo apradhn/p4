@@ -25,7 +25,8 @@ class UserController extends BaseController {
         }
 
         $user = new User;
-        $user->email    = Input::get('email');
+        $user->name = Input::get('name');
+        $user->email = Input::get('email');
         $user->password = Hash::make(Input::get('password'));
 
         # Try to add the user 

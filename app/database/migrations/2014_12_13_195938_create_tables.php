@@ -23,6 +23,7 @@ class CreateTables extends Migration {
 
 			# General data 			
 			$table->string('email')->unique();
+			$table->string('name');
 			$table->string('remember_token', 100);
 			$table->string('password');
 
@@ -57,6 +58,9 @@ class CreateTables extends Migration {
 	 */
 	public function down()
 	{
+    Schema::table('items', function($table) {
+        $table->dropForeign('items_user_id_foreign'); # table_fields_foreign
+    });
 		Schema::drop('users');
 		Schema::drop('items');
 	}

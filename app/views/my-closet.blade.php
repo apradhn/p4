@@ -39,7 +39,7 @@
 						{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
 							{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	
 						{{ Form::close() }}
-					<div>
+					</div>
 				</div>
 			</div>
 		@endforeach
