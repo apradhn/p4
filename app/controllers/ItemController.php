@@ -54,24 +54,8 @@ class ItemController extends \BaseController {
 			$item->color_url = 'images/item_colors/purple.png';
 		}
 
-		if ($item->color == 'deepPurple') {
-			$item->color_url = 'images/item_colors/deeppurple.png';
-		}
-
-		if ($item->color == 'indigo') {
-			$item->color_url = 'images/item_colors/indigo.png';
-		}
-
 		if ($item->color == 'blue') {
 			$item->color_url = 'images/item_colors/blue.png';
-		}
-
-		if ($item->color == 'lightBlue') {
-			$item->color_url = 'images/item_colors/lightblue.png';
-		}
-
-		if ($item->color == 'cyan') {
-			$item->color_url = 'images/item_colors/cyan.png';
 		}
 
 		if ($item->color == 'teal') {
@@ -82,36 +66,20 @@ class ItemController extends \BaseController {
 			$item->color_url = 'images/item_colors/green.png';
 		}
 
-		if ($item->color == 'lightGreen') {
-			$item->color_url = 'images/item_colors/lightgreen.png';
-		}
-
-		if ($item->color == 'lime') {
-			$item->color_url = 'images/item_colors/lime.png';
-		}
-
 		if ($item->color == 'yellow') {
 			$item->color_url = 'images/item_colors/yellow.png';
-		}
-
-		if ($item->color == 'amber') {
-			$item->color_url = 'images/item_colors/amber.png';
 		}
 
 		if ($item->color == 'orange') {
 			$item->color_url = 'images/item_colors/orange.png';
 		}
 
-		if ($item->color == 'deepOrange') {
-			$item->color_url = 'images/item_colors/deeporange.png';
-		}
-
 		if ($item->color == 'brown') {
 			$item->color_url = 'images/item_colors/brown.png';
 		}
 
-		if ($item->color == 'blueGrey') {
-			$item->color_url = 'images/item_colors/bluegrey.png';
+		if ($item->color == 'grey') {
+			$item->color_url = 'images/item_colors/grey.png';
 		}
 
 		if ($item->color == 'black') {

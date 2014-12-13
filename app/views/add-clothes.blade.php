@@ -272,48 +272,12 @@
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
-								{{ Form::radio('color', 'deepPurple') }}
-								<span class="circle"></span>
-								<span class="check"></span>
-								Deep Purple
-							</label>
-							<img src="{{ asset('images/item_colors/deeppurple.png') }}" class="color">								
-						</div>
-						<div class="radio radio-primary col-md-4 item-color">
-							<label>
-								{{ Form::radio('color', 'indigo') }}
-								<span class="circle"></span>
-								<span class="check"></span>
-								Indigo 
-							</label>
-							<img src="{{ asset('images/item_colors/indigo.png') }}" class="color">								
-						</div>
-						<div class="radio radio-primary col-md-4 item-color">
-							<label>
 								{{ Form::radio('color', 'blue') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Blue 
 							</label>
 							<img src="{{ asset('images/item_colors/blue.png') }}" class="color">								
-						</div>
-						<div class="radio radio-primary col-md-4 item-color">
-							<label>
-								{{ Form::radio('color', 'lightBlue') }}
-								<span class="circle"></span>
-								<span class="check"></span>
-								Light Blue 
-							</label>
-							<img src="{{ asset('images/item_colors/lightblue.png') }}" class="color">								
-						</div>	
-						<div class="radio radio-primary col-md-4 item-color">
-							<label>
-								{{ Form::radio('color', 'cyan') }}
-								<span class="circle"></span>
-								<span class="check"></span>
-								Cyan 
-							</label>
-							<img src="{{ asset('images/item_colors/cyan.png') }}" class="color">								
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
@@ -335,24 +299,6 @@
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
-								{{ Form::radio('color', 'lightGreen') }}
-								<span class="circle"></span>
-								<span class="check"></span>
-								Light Green 
-							</label>
-							<img src="{{ asset('images/item_colors/lightgreen.png') }}" class="color">								
-						</div>
-						<div class="radio radio-primary col-md-4 item-color">
-							<label>
-								{{ Form::radio('color', 'lime') }}
-								<span class="circle"></span>
-								<span class="check"></span>
-								Lime  
-							</label>
-							<img src="{{ asset('images/item_colors/lime.png') }}" class="color">								
-						</div>
-						<div class="radio radio-primary col-md-4 item-color">
-							<label>
 								{{ Form::radio('color', 'yellow') }}
 								<span class="circle"></span>
 								<span class="check"></span>
@@ -360,15 +306,6 @@
 							</label>
 							<img src="{{ asset('images/item_colors/yellow.png') }}" class="color">								
 						</div>
-						<div class="radio radio-primary col-md-4 item-color">
-							<label>
-								{{ Form::radio('color', 'amber') }}
-								<span class="circle"></span>
-								<span class="check"></span>
-								Amber  
-							</label>
-							<img src="{{ asset('images/item_colors/amber.png') }}" class="color">								
-						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
 								{{ Form::radio('color', 'orange') }}
@@ -380,15 +317,6 @@
 						</div>
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
-								{{ Form::radio('color', 'deepOrange') }}
-								<span class="circle"></span>
-								<span class="check"></span>
-								Deep Orange  
-							</label>
-							<img src="{{ asset('images/item_colors/deeporange.png') }}" class="color">								
-						</div>	
-						<div class="radio radio-primary col-md-4 item-color">
-							<label>
 								{{ Form::radio('color', 'brown') }}
 								<span class="circle"></span>
 								<span class="check"></span>
@@ -398,12 +326,12 @@
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>
-								{{ Form::radio('color', 'blueGrey') }}
+								{{ Form::radio('color', 'grey') }}
 								<span class="circle"></span>
 								<span class="check"></span>
-								Blue Grey  
+								Grey  
 							</label>
-							<img src="{{ asset('images/item_colors/bluegrey.png') }}" class="color">								
+							<img src="{{ asset('images/item_colors/grey.png') }}" class="color">								
 						</div>	
 						<div class="radio radio-primary col-md-4 item-color">
 							<label>

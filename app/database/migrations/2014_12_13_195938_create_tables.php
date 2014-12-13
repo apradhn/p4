@@ -41,15 +41,13 @@ class CreateTables extends Migration {
 			$table->string('washing_instructions');
 			$table->string('drying_instructions');
 			$table->string('color');
+			$table->string('color_url');
 			$table->integer('user_id')->unsigned();
 
 			# Define foreign keys
 			$table->foreign('user_id')->references('id')->on('users');
 
 		});
-
-
-
 	}
 
 	/**
