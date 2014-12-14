@@ -26,5 +26,5 @@
 @stop
 
 @section ('content')
-	{{ $input }}
+	{{ $output }}
 @stop

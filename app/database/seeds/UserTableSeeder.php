@@ -11,7 +11,7 @@ class UserTableSeeder extends Seeder {
   		$user = User::create(array(
   			'name' => $faker->firstName, 
   			'email' => $faker->email,
-  			'password' => $faker->password
+  			'password' => $faker->word
   		));
   	}
 

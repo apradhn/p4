@@ -37,7 +37,7 @@
 					<div class="modify-buttons">
 							<span class="checkbox item-checkbox">
 								<label>
-									{{ Form::checkbox($item->id, $item) }}
+									{{ Form::checkbox($item->id, $item->name) }}
 								</label>
 							</span>
 						<a class ="btn btn-link" href="/item/{{ $item->id }}/edit">EDIT</a>

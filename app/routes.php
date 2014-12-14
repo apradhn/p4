@@ -179,3 +179,11 @@ Route::get('/truncate', function() {
     DB::statement('TRUNCATE items');
     DB::statement('TRUNCATE users');
 });
+
+Route::get('/login-test', function() {
+    $user = User::find(1);
+
+    Auth::login($user);
+
+    return Redirect::to('/');
+});
