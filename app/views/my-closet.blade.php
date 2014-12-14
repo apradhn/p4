@@ -29,20 +29,30 @@
 
 @section ('content')
 	@if(isset($items))
-		@foreach ($items as $item)
-			<div class="well col-md-8 col-md-offset-2">
-				<img class="swatch" src="{{ asset($item->color_url) }}">
-				<span class="item-name">{{ $item->name; }}</span>
-				<div class="modify-buttons">
-					<a class ="btn btn-link" href="/item/{{ $item->id }}/edit">EDIT</a>
-					<div class="delete">
-						{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
-							{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	
-						{{ Form::close() }}
+		{{ Form::open(array('url' => '/sort-laundry', 'method' => 'POST', 'class' => 'form-horizontal')) }}
+			@foreach ($items as $item)
+				<div class="well col-md-8 col-md-offset-2">
+					<img class="swatch" src="{{ asset($item->color_url) }}">
+					<span class="item-name">{{ $item->name; }}</span>
+					<div class="modify-buttons">
+							<span class="checkbox item-checkbox">
+								<label>
+									{{ Form::checkbox($item->id, $item) }}
+								</label>
+							</span>
+						<a class ="btn btn-link" href="/item/{{ $item->id }}/edit">EDIT</a>
+						<!-- 
+						<div class="delete">
+							{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
+								{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	
+							{{ Form::close() }}
+						</div>
+						-->
 					</div>
 				</div>
-			</div>
-		@endforeach
+			@endforeach
+			{{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
+		{{ Form::close() }}
 	@endif
 
 	@if(isset($none))

@@ -13,3 +13,12 @@
 .delete, .delete > form {
 	display: inline;
 }
+
+
+.checkbox.item-checkbox {
+	display: inline;
+}
+
+.hidden-submit-laundry {
+	/* display: none; */
+}

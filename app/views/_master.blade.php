@@ -7,17 +7,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Latest compiled and minified Bootstrap CSS --> 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    	<!-- Latest compiled and minified Bootstrap JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>	
-		<!-- JQuery --> 
-		<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     	<!-- Material Design Bootstrap --> 
     	<link href="{{ asset('css/ripples.min.css') }}" rel="stylesheet">
         <link href="{{ asset('css/material-wfont.min.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/ripples.min.js') }}"></script>
-        <script src="{{ asset('js/material.min.js') }}"></script>
         <link href="{{ asset('css/starter-template.css') }}" rel="stylesheet">
+        <link href="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet">
     	@yield('head')
 
 	</head>
@@ -57,8 +52,15 @@
   		<div class="starter-template">
   			@yield('content')
       	</div>
-	    <!-- Bootstrap core Javascript -->
+      	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    	<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>   	    	
+    	<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>   
+        <script src="{{ asset('js/ripples.min.js') }}"></script>
+        <script src="{{ asset('js/material.min.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $.material.init();
+            });
+        </script>        	    	
 	</body>
 </html>
