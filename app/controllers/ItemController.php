@@ -1,6 +1,6 @@
 <?php
 
-class ItemController extends \BaseController {
+class ItemController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -41,54 +41,7 @@ class ItemController extends \BaseController {
 		$item->washing_instructions = Input::get('wash');
 		$item->drying_instructions = Input::get('dry');
 		$item->color = Input::get('color');
-
-		if ($item->color == 'red') {
-			$item->color_url = 'images/item_colors/red.png';
-		}
-
-		if ($item->color == 'pink') {
-			$item->color_url = 'images/item_colors/pink.png';
-		}
-
-		if ($item->color == 'purple') {
-			$item->color_url = 'images/item_colors/purple.png';
-		}
-
-		if ($item->color == 'blue') {
-			$item->color_url = 'images/item_colors/blue.png';
-		}
-
-		if ($item->color == 'teal') {
-			$item->color_url = 'images/item_colors/teal.png';
-		}
-
-		if ($item->color == 'green') {
-			$item->color_url = 'images/item_colors/green.png';
-		}
-
-		if ($item->color == 'yellow') {
-			$item->color_url = 'images/item_colors/yellow.png';
-		}
-
-		if ($item->color == 'orange') {
-			$item->color_url = 'images/item_colors/orange.png';
-		}
-
-		if ($item->color == 'brown') {
-			$item->color_url = 'images/item_colors/brown.png';
-		}
-
-		if ($item->color == 'grey') {
-			$item->color_url = 'images/item_colors/grey.png';
-		}
-
-		if ($item->color == 'black') {
-			$item->color_url = 'images/item_colors/black.png';
-		}
-
-		if ($item->color == 'white') {
-			$item->color_url = 'images/item_colors/white.png';
-		}
+		$item->color_url = Item::getColorURL($item->color);
 
 		$item->user()->associate($user); # <-- Associate the user with this item
 
@@ -139,6 +92,7 @@ class ItemController extends \BaseController {
 		$item->washing_instructions = Input::get('wash');
 		$item->drying_instructions = Input::get('dry');
 		$item->color = Input::get('color');
+		$item->color_url = Item::getColorURL($item->color);
 
 		$item->save();
 
@@ -160,6 +114,7 @@ class ItemController extends \BaseController {
 
 		return Redirect::to('/my-closet')->with('flash_message', 'Item Updated!');			
 	}
+
 
 
 }

@@ -58,9 +58,6 @@ class CreateTables extends Migration {
 	 */
 	public function down()
 	{
-    Schema::table('items', function($table) {
-        $table->dropForeign('items_user_id_foreign'); # table_fields_foreign
-    });
 		Schema::drop('users');
 		Schema::drop('items');
 	}
