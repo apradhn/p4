@@ -165,8 +165,12 @@ class LaundryController extends BaseController {
 			'dryData' => $dryData
 		);
 
-		$output = Paste\Pre::render(array_filter($data));
+		#$output = Paste\Pre::render(array_filter($data));
 
-		return View::make('my-laundry')->with('output', $output);		
+		$output = Paste\Pre::render($washData);
+
+		return View::make('my-laundry')
+			->with('washData', $washData)
+			->with('dryData', $dryData);		
 	}
 }
