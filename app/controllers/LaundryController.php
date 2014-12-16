@@ -53,75 +53,75 @@ class LaundryController extends BaseController {
 				# Sorts items by washing instructions
 				if ($item->washing_instructions == 'mwNormal') 
 				{
-					array_push($mwNormal, $item->name);
+					array_push($mwNormal, $item->id);
 				}
 				elseif ($item->washing_instructions == 'mwCold') 
 				{
-					array_push($mwCold, $item->name); 
+					array_push($mwCold, $item->id); 
 				}
 				elseif ($item->washing_instructions == 'mwWarm') 
 				{
-					array_push($mwWarm, $item->name);
+					array_push($mwWarm, $item->id);
 				}
 				elseif ($item->washing_instructions == 'mwHot') 
 				{
-					array_push($mwHot, $item->name);
+					array_push($mwHot, $item->id);
 				}
 				elseif ($item->washing_instructions == 'mwColdPerm') 
 				{
-					array_push($mwColdPerm, $item->name);
+					array_push($mwColdPerm, $item->id);
 				}
 				elseif ($item->washing_instructions == 'mwWarmPerm') 
 				{
-					array_push($mwWarmPerm, $item->name);
+					array_push($mwWarmPerm, $item->id);
 				}
 				elseif ($item->washing_instructions == 'mwHotPerm') 
 				{
-					array_push($mwHotPerm, $item->name);
+					array_push($mwHotPerm, $item->id);
 				}
 
 				# Sorts items by drying instructions
 				if ($item->drying_instructions == 'tdNormal') {
-					array_push($tdNormal, $item->name);
+					array_push($tdNormal, $item->id);
 				}
 				elseif ($item->drying_instructions == 'tdNoHeat') {
-					array_push($tdNoHeat, $item->name);
+					array_push($tdNoHeat, $item->id);
 				}
 				elseif ($item->drying_instructions == 'tdLowHeat') {
-					array_push($tdLowHeat, $item->name);
+					array_push($tdLowHeat, $item->id);
 				}
 				elseif ($item->drying_instructions == 'tdMedium') {
-					array_push($tdMedium, $item->name);
+					array_push($tdMedium, $item->id);
 				}		
 				elseif ($item->drying_instructions == 'tdHigh') {
-					array_push($tdHigh, $item->name);
+					array_push($tdHigh, $item->id);
 				}		
 				elseif ($item->drying_instructions == 'tdNoHeatPerm') {
-					array_push($tdNoHeatPerm, $item->name);
+					array_push($tdNoHeatPerm, $item->id);
 				}			
 				elseif ($item->drying_instructions == 'tdLowHeatPerm') {
-					array_push($tdLowHeatPerm, $item->name);
+					array_push($tdLowHeatPerm, $item->id);
 				}			
 				elseif ($item->drying_instructions == 'tdMediumPerm') {
-					array_push($tdMediumPerm, $item->name);
+					array_push($tdMediumPerm, $item->id);
 				}	
 				elseif ($item->drying_instructions == 'tdNoHeatGentle') {
-					array_push($tdNoHeatGentle, $item->name);
+					array_push($tdNoHeatGentle, $item->id);
 				}				
 				elseif ($item->drying_instructions == 'tdLowHeatGentle') {
-					array_push($tdLowHeatGentle, $item->name);
+					array_push($tdLowHeatGentle, $item->id);
 				}			
 				elseif ($item->drying_instructions == 'tdMediumGentle') {
-					array_push($tdMediumGentle, $item->name);
+					array_push($tdMediumGentle, $item->id);
 				}							
 				elseif ($item->drying_instructions == 'lineDry') {
-					array_push($lineDry, $item->name);
+					array_push($lineDry, $item->id);
 				}	
 				elseif ($item->drying_instructions == 'dripDry') {
-					array_push($dripDry, $item->name);
+					array_push($dripDry, $item->id);
 				}
 				elseif ($item->drying_instructions == 'dryFlat') {
-					array_push($dryFlat, $item->name);
+					array_push($dryFlat, $item->id);
 				}						
 			}
 		}
@@ -172,6 +172,6 @@ class LaundryController extends BaseController {
 		return View::make('my-laundry')
 			->with('washData', $washData)
 			->with('dryData', $dryData)
-			->with('flash_message', 'Laundry Sorted!');		
+			->with('items', '$items');		
 	}
 }

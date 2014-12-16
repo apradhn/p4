@@ -12,3 +12,11 @@
 .cycle .well {
 	width: 75%;
 }
+
+ .list-group .list-group-item .row-picture img {
+ 	background: rgba(0,0,0,.0);
+ }
+
+ .swatch {
+ 	width: 20px;
+ }
