@@ -17,6 +17,10 @@
  	background: rgba(0,0,0,.0);
  }
 
- .swatch {
- 	width: 20px;
+ .row-picture {
+ 	padding-top: 10px;
+ }
+
+ .row-content {
+ 	padding-top: 10px;
  }
