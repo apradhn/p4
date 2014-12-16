@@ -171,6 +171,7 @@ class LaundryController extends BaseController {
 
 		return View::make('my-laundry')
 			->with('washData', $washData)
-			->with('dryData', $dryData);		
+			->with('dryData', $dryData)
+			->with('flash_message', 'Laundry Sorted!');		
 	}
 }

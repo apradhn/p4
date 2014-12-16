@@ -5,15 +5,16 @@
 @stop
 
 @section('head')
-	<link href="{{ asset('css/index.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/login.css') }}" rel="stylesheet">
 @stop
 
 @section('masthead')
  	<div class="jumbotron">
 		<div class="container">
 			<h1>T.A.L.O.S.</h1>
-			<p class="lead">Tactical Algorithmic Laundry Organizing Servant</p>
-			<p>Fill a closet with your clothes according to their care instructions. When you're done, select the clothes you want to wash and TALOS will sort your laundry.</p>
+			<h2>Tactical Algorithmic Laundry Organizing Servant</h2>
+			<p class="lead">Upload your clothes with the care instructions on the label, and TALOS <br>will tell you 
+			how to wash and dry the clothes you want to wash.</p>
 		</div>
     </div>	
  @stop

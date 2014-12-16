@@ -22,3 +22,9 @@
 .hidden-submit-laundry {
 	/* display: none; */
 }
+
+.sort {
+	position: fixed;
+	top: 50%;
+	right: 5%;
+}

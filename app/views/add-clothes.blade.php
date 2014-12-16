@@ -11,9 +11,7 @@
 @section ('masthead')
  	<div class="jumbotron">
 		<div class="container">
-			<h1>T.A.L.O.S.</h1>
-			<p class="lead">Tactical Algorithmic Laundry Organizing Servant</p>
-			<p>Enter information about the piece of clothing</p>
+		<h2>T.A.L.O.S.</h2>
 		</div>
     </div>
  	<div class="separator">

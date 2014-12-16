@@ -11,19 +11,15 @@
 @section ('masthead')
  	<div class="jumbotron">
 		<div class="container">
-			<h1>T.A.L.O.S.</h1>
-			<p class="lead">Tactical Algorithmic Laundry Organizing Servant</p>
-			<ol>
-				<li>Add Clothes to Closet</li>
-				<li>Select the Clothes You Want to Wash</li>
-				<li>Start Laundry</li>
-			</ol>
+		<h2>T.A.L.O.S.</h2>
+		<p></p>
 		</div>
     </div>
  	<div class="separator">
- 		<div class="separator-text col-md-6 col-md-offset-1">My Closet</div>
+ 		<div class="col-md-6 col-md-offset-2"><div class="separator-text">My Closet</div></div>
+ 		<div class="col-md-4">
  		<a href="/item/create"><button class="btn btn-primary btn-raised">ADD CLOTHES</button></a>
- 		<a href="/start-laundry"><button class="btn btn-primary btn-raised">START LAUNDRY</button></a>
+ 		</div>
  	</div>   	
 @stop
 
@@ -51,7 +47,7 @@
 					</div>
 				</div>
 			@endforeach
-			{{ Form::submit('submit', array('class' => 'btn btn-primary')) }}
+			{{ Form::submit('Sort!', array('class' => 'btn btn-primary btn-raised btn-lg sort')) }}
 		{{ Form::close() }}
 	@endif
 

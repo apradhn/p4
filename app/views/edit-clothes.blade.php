@@ -1,7 +1,7 @@
 @extends ('_master')
 
 @section ('title')
-	Edit Clothes
+	Editing {{$item->name}}
 @stop
 
 @section ('head')
@@ -11,13 +11,21 @@
 @section ('masthead')
  	<div class="jumbotron">
 		<div class="container">
-			<h1>T.A.L.O.S.</h1>
-			<p class="lead">Tactical Algorithmic Laundry Organizing Servant</p>
-			<p>Update the information for a piece of clothing</p>
+		<h2>T.A.L.O.S.</h2>
+		<div class="back">
+			<a href="/my-closet"><i class="mdi-navigation-arrow-back"></i> My Closet</a>
+		</div>
 		</div>
     </div>
  	<div class="separator">
- 		<div class="separator-text col-md-6 col-md-offset-1">Edit Clothes</div>
+ 		<div class="col-md-6 col-md-offset-2"><div class="separator-text">Edit Clothes</div></div>
+ 		<div class="col-md-4">
+			<div class="delete">
+				{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
+					{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	
+				{{ Form::close() }}
+			</div> 			
+ 		</div>
  	</div>
 @stop
 
@@ -29,13 +37,13 @@
 				<div class="form-group">
 					{{ Form::label('name', 'Name', array('class' => 'col-md-2 control-label')) }}
 					<div class="col-md-4">
-						{{ Form::text('name', 'Name', array('class' => 'form-control')) }}
+						{{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => $item->name)) }}
 					</div>
 				</div>
 				<div class="form-group">
 					{{ Form::label('washingInstructions', 'Washing Instructions', array('class' => 'col-md-2 control-label')) }}
 					<div class="col-md-8">
-						<div class="radio radio-primary">
+						<div class="radio radio-primary">	
 							<label>
 								{{ Form::radio('wash', 'mwNormal') }}
 								<span class="circle"></span>

@@ -19,3 +19,25 @@
 .radio.radio-primary.col-md-4.item-color {
 	height: 60px;
 }
+
+.delete, .delete > form {
+	display: inline;
+}
+
+
+.back {
+	color: #ffffff;
+	font-size: 12pt;
+	size: 30px;
+}
+
+.back a, .back a:hover {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+i.mdi-navigation-arrow-back {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

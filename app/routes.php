@@ -181,7 +181,7 @@ Route::get('/truncate', function() {
 });
 
 Route::get('/login-test', function() {
-    $user = User::find(1);
+    $user = User::find(2);
 
     Auth::login($user);
 

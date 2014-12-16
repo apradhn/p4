@@ -1,0 +1,14 @@
+.cycle-heading {
+	color: #000000;
+	opacity: 0.54;
+}
+
+.cycle {
+	float: left;
+	width: 50%;
+	font-size: 16px;
+}
+
+.cycle .well {
+	width: 75%;
+}
