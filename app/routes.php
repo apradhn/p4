@@ -89,6 +89,9 @@ Route::put('/item/{item_id}', 'ItemController@update');
 
 Route::delete('/item/{item_id}', 'ItemController@destroy');
 
+
+Route::post('/item/search', 'ItemController@postSearch'); # Process the search
+
 # Routes for Laundry Sorter 
 Route::post('/sort-laundry', 'LaundryController@sort');
 

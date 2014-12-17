@@ -61,6 +61,7 @@
             $(document).ready(function() {
                 $.material.init();
             });
-        </script>        	    	
+        </script> 
+        @yield('footer')  	    	
 	</body>
 </html>

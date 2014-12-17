@@ -26,9 +26,6 @@
 		<div class="col-md-offset-1 cycle-heading">
 			<h2>Wash Cycles</h2>
 		</div>
-	</div>
-	
-	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 
 			@if (isset($washData['mwNormal']))

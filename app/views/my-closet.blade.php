@@ -24,6 +24,17 @@
 @stop
 
 @section ('content')
+<!-- 
+	<label for="query">Search:</label>
+	<input type="text" id="query" value="item"><br><br>
+
+	{{ Form::token() }} 
+
+	<button id="search-json">Search and get JSON back</button><br><br>
+	<button id="search-html">Search and get HTML back</button>
+	<div id="results"></div>
+--> 
+
 	@if(isset($items))
 		{{ Form::open(array('url' => '/sort-laundry', 'method' => 'POST', 'class' => 'form-horizontal')) }}
 			@foreach ($items as $item)
@@ -54,4 +65,8 @@
 	@if(isset($none))
 		<div class="well col-md-8 col-md-offset-2">{{ $none }}</div>
 	@endif
+@stop
+
+@section ('footer') 
+	<script src="/js/search.js"></script>
 @stop
