@@ -7,6 +7,12 @@ class Item extends Eloquent {
 		# Define an inverse one-to-many relationship
 		return $this->belongsTo('User');
 	}
+
+	public function tags() {
+		# Items  belong to many Tags
+        return $this->belongsToMany('Tag');		
+	}
+	
 	/**
 	 * Assigns color_url field based on the color passed
 	 *
