@@ -39,12 +39,18 @@
 		{{ Form::open(array('url' => '/sort-laundry', 'method' => 'POST', 'class' => 'form-horizontal')) }}
 			@foreach ($items as $item)
 				<div class="well col-md-8 col-md-offset-2">
+
 					<img class="swatch" src="{{ asset($item->color_url) }}">
+					
 					<span class="item-name">{{ $item->name; }}</span>
+					@foreach ( $item->tags as $tag)
+						<small class="tag">{{ $tag->name }}</small>
+					@endforeach
+					
 					<div class="modify-buttons">
 						<a class ="btn btn-default" href="/item/{{ $item->id }}/edit">EDIT</a>
-						<a class="btn btn-default" href="/tag/create">ADD TAGS</a>
-						<span class="checkbox item-checkbox">
+						<a class="btn btn-default" href="/tag/{{ $item->id }}/create">ADD TAGS</a>
+					<span class="checkbox item-checkbox">
 							<label>
 								{{ Form::checkbox($item->id, $item->name) }}
 							</label>

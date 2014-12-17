@@ -28,3 +28,9 @@
 	top: 50%;
 	right: 5%;
 }
+
+.tag {
+	color: #000000;
+	opacity: 0.54;
+	margin-left: 10px;
+}

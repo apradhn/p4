@@ -16,22 +16,40 @@ class TagController extends \BaseController {
 	/**
 	 * Show the form for creating a new resource.
 	 *
+	 * @param  int  $id
 	 * @return Response
 	 */
-	public function create()
+	public function create($id)
 	{
-		return View::make('add-tags');
+		$item = Item::find($id);
+		return View::make('add-tags')
+			->with('item', $item);
 	}
 
 
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	  * @param  int  $id
 	 * @return Response
 	 */
-	public function store()
+	public function store($id)
 	{
-		//
+		$item = Item::find($id);
+
+		# Instantiate a new Item class
+		$tag = new Tag();
+
+		# Set
+		$tag->name = Input::get('name');
+		$tag->save();
+
+		# Attach tag to item 
+		$item->tags()->attach($tag);
+
+		return Redirect::to('/my-closet')
+			->with('flash_message', 'Tag Added!');
+
 	}
 
 

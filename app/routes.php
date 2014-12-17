@@ -107,13 +107,19 @@ Route::post('/item/search', 'ItemController@postSearch'); # Process the search
 
 # RESTful routes for Tags
 Route::get('/tag', 'TagController@index');
-Route::get('/tag/create', 'TagController@create');
-Route::post('/tag', 'TagController@store');
+Route::get('/tag/{item_id}/create', 'TagController@create');
+Route::post('/{item_id}/tag', 'TagController@store');
 Route::get('/tag/{tag_id}', 'TagController@show');
 Route::get('/tag/{tag_id}/edit', 'TagController@edit');
 Route::put('/tag/{tag_id}', 'TagController@update');
 Route::delete('/tag/{tag_id}', 'TagController@destroy');
 
+
+/*
+|--------------------------------------------------------------------------
+| Laundry Sorter Routes
+|--------------------------------------------------------------------------
+*/
 # Routes for Laundry Sorter 
 Route::post('/sort-laundry', 'LaundryController@sort');
 
