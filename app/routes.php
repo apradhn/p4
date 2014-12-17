@@ -73,6 +73,12 @@ Route::get('/my-closet',
     )
 );
 
+/*
+|--------------------------------------------------------------------------
+| Items Routes
+|--------------------------------------------------------------------------
+*/
+
 # RESTful routes for Items 
 
 Route::get('/item', 'ItemController@index');
@@ -89,8 +95,24 @@ Route::put('/item/{item_id}', 'ItemController@update');
 
 Route::delete('/item/{item_id}', 'ItemController@destroy');
 
+# Items search
 
 Route::post('/item/search', 'ItemController@postSearch'); # Process the search
+
+/*
+|--------------------------------------------------------------------------
+| Tag Routes
+|--------------------------------------------------------------------------
+*/
+
+# RESTful routes for Tags
+Route::get('/tag', 'TagController@index');
+Route::get('/tag/create', 'TagController@create');
+Route::post('/tag', 'TagController@store');
+Route::get('/tag/{tag_id}', 'TagController@show');
+Route::get('/tag/{tag_id}/edit', 'TagController@edit');
+Route::put('/tag/{tag_id}', 'TagController@update');
+Route::delete('/tag/{tag_id}', 'TagController@destroy');
 
 # Routes for Laundry Sorter 
 Route::post('/sort-laundry', 'LaundryController@sort');

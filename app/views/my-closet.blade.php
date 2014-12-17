@@ -42,19 +42,13 @@
 					<img class="swatch" src="{{ asset($item->color_url) }}">
 					<span class="item-name">{{ $item->name; }}</span>
 					<div class="modify-buttons">
-							<span class="checkbox item-checkbox">
-								<label>
-									{{ Form::checkbox($item->id, $item->name) }}
-								</label>
-							</span>
-						<a class ="btn btn-link" href="/item/{{ $item->id }}/edit">EDIT</a>
-						<!-- 
-						<div class="delete">
-							{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
-								{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	
-							{{ Form::close() }}
-						</div>
-						-->
+						<a class ="btn btn-default" href="/item/{{ $item->id }}/edit">EDIT</a>
+						<a class="btn btn-default" href="/tag/create">ADD TAGS</a>
+						<span class="checkbox item-checkbox">
+							<label>
+								{{ Form::checkbox($item->id, $item->name) }}
+							</label>
+						</span>						
 					</div>
 				</div>
 			@endforeach
