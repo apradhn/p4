@@ -20,9 +20,9 @@ Jing Screencast [http://screencast.com/t/EqdCNICP](http://screencast.com/t/EqdCN
 
 Test Login: 
 
-username: test0@apradhan.me
+username: test@apradhan.me
 
-password: letmein1234
+password: letmein
 
 ----
 ## Outside Code
