@@ -42,6 +42,18 @@ class ItemController extends \BaseController {
                 ->withErrors($validator);
         }
 
+		# Instantiate a new Item model class 
+		$item = new Item();
+
+		# Set
+		$item->name = Input::get('name');
+		$item->washing_instructions = Input::get('wash');
+		$item->drying_instructions = Input::get('dry');
+		$item->color = Input::get('color');
+		$item->color_url = Item::getColorURL($item->color);
+
+		$item->user()->associate($user); # <-- Associate the user with this item
+
         # Try to add the item 
         try {
             $item->save();
@@ -52,19 +64,7 @@ class ItemController extends \BaseController {
         	Flash::warning('Item creation failed; please try again');
 
             return Redirect::to('/item/create')->withInput();
-        }
-
-		# Instantiate a new Item model class 
-		$item = new Item(); 
-
-		# Set
-		$item->name = Input::get('name');
-		$item->washing_instructions = Input::get('wash');
-		$item->drying_instructions = Input::get('dry');
-		$item->color = Input::get('color');
-		$item->color_url = Item::getColorURL($item->color);
-
-		$item->user()->associate($user); # <-- Associate the user with this item
+        }		
 
 		$item->save();
 
