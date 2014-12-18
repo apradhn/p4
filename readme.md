@@ -11,6 +11,8 @@ A tool that sorts laundry into separate loads, according to the care instruction
 ----
 ## Demo
 
+Jing Screencast [http://screencast.com/t/EqdCNICP](http://screencast.com/t/EqdCNICP)
+
 ----
 ## Details for teaching team
 
