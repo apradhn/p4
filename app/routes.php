@@ -129,6 +129,8 @@ Route::post('/sort-laundry', 'LaundryController@sort');
 |--------------------------------------------------------------------------
 */
 
+/*
+
 # Find out what environment you're running
 Route::get('/get-environment',function() {
 
@@ -218,3 +220,5 @@ Route::get('/login-test', function() {
 
     return Redirect::to('/');
 });
+
+*/
