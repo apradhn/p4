@@ -75,18 +75,6 @@ class ItemController extends \BaseController {
 }
 
 	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-
-	/**
 	 * Show the form for editing the specified resource.
 	 *
 	 * @param  int  $id
@@ -108,7 +96,40 @@ class ItemController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$item = Item::find($id);
+
+		# Establish rules of adding an item; all fields required
+		$rules = array(
+			'name' => 'required', 
+			'wash' => 'required',
+			'dry' => 'required',
+			'color' => 'required'
+		);
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if($validator->fails()) {
+
+        	Flash::warning('Item creation failed; please fix the errors listed below.');
+
+            return Redirect::to('/item/create')
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        # Try to add the item 
+        try {
+            $user->save();
+        }
+        # Fail
+        catch (Exception $e) {
+
+        	Flash::warning('Sign up failed; please try again');
+
+            return Redirect::to('/item/create')->withInput();
+        }
+
+        # Find the selected item 
+		$item = Item::find($id);        
 
 		# Set
 		$item->name = Input::get('name');
