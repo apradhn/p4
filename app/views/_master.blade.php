@@ -35,7 +35,7 @@
 	            <li><a href="http://p3.apradhan.me">p3</a></li>
 	            <li class="active"><a href="/">p4</a></li>
 				@if(Auth::check())
-				    <li><a href='/logout'>Log out {{ Auth::user()->email; }}</a></li>
+				    <li><a href='/logout'>Log out {{ Auth::user()->name; }}</a></li>
 				@endif	            
 	          </ul>
 	        </div><!--/.nav-collapse -->
