@@ -27,7 +27,29 @@
  	</div>
 @stop
 
+
 @section('content')
+
+	@if(Session::has('flash_warning'))
+		<div class="row">
+		    <div class='alert alert-dismissable alert-warning col-md-4 col-md-offset-4'>
+		        <button type="button" class="close" data-dismiss="alert">x</button>
+		        <span class="flash">{{ Session::get('flash_warning') }}</span>
+		    </div>
+		</div>
+		@foreach($errors->all() as $message) 
+		<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-4">
+			    <div class='alert alert-dismissable alert-danger'>
+			    	<button type="button" class="close" data-dismiss="alert">×</button>
+			    	{{ $message }}
+			    </div>
+		    </div>
+		</div>
+		@endforeach		    
+	@endif
+
+
 	<div class="col-md-8 col-md-offset-2 well">
 		{{ Form::model($item, ['method' => 'put', 'action' => ['ItemController@update', $item->id], 'class' => 'form-horizontal']) }}
 			<fieldset>
@@ -35,15 +57,15 @@
 				<div class="form-group">
 					{{ Form::label('name', 'Name', array('class' => 'col-md-2 control-label')) }}
 					<div class="col-md-4">
-						{{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => $item->name)) }}
+						{{ Form::text('name', $item->name, array('class' => 'form-control')) }}
 					</div>
 				</div>
 				<div class="form-group">
-					{{ Form::label('washingInstructions', 'Washing Instructions', array('class' => 'col-md-2 control-label')) }}
+					{{ Form::label('washing_instructions', 'Washing Instructions', array('class' => 'col-md-2 control-label')) }}
 					<div class="col-md-8">
 						<div class="radio radio-primary">	
 							<label>
-								{{ Form::radio('wash', 'mwNormal') }}
+								{{ Form::radio('washing_instructions', 'mwNormal') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Machine Wash Normal
@@ -52,7 +74,7 @@
 						</div>					
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('wash', 'mwCold') }}
+								{{ Form::radio('washing_instructions', 'mwCold') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Machine Wash Cold
@@ -64,7 +86,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('wash', 'mwWarm') }}
+								{{ Form::radio('washing_instructions', 'mwWarm') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Machine Wash Warm
@@ -76,7 +98,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('wash', 'mwHot') }}
+								{{ Form::radio('washing_instructions', 'mwHot') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Machine Wash Hot
@@ -88,7 +110,7 @@
 						</div>	
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('wash', 'mwColdPerm') }}
+								{{ Form::radio('washing_instructions', 'mwColdPerm') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Machine Wash Cold, Permanent Press
@@ -97,7 +119,7 @@
 						</div>	
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('wash', 'mwWarmPerm') }}
+								{{ Form::radio('washing_instructions', 'mwWarmPerm') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Machine Wash Warm, Permanent Press
@@ -106,7 +128,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('wash', 'mwHotPerm') }}
+								{{ Form::radio('washing_instructions', 'mwHotPerm') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Machine Wash Hot, Permanent Press
@@ -116,7 +138,7 @@
 					</div>
 				</div>
 				<div class="form-group">
-					{{ Form::label('dryingInstructions', 'Drying Instructions', array('class' => 'col-md-2 control-label')) }}
+					{{ Form::label('drying_instructions', 'Drying Instructions', array('class' => 'col-md-2 control-label')) }}
 					<div class="col-md-8">
 						<div class="radio radio-primary">
 							<label>
@@ -129,7 +151,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdNoHeat') }}
+								{{ Form::radio('drying_instructions', 'tdNoHeat') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, No Heat
@@ -138,7 +160,7 @@
 						</div>	
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdLowHeat') }}
+								{{ Form::radio('drying_instructions', 'tdLowHeat') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, Low Heat
@@ -147,7 +169,7 @@
 						</div>	
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdMedium') }}
+								{{ Form::radio('drying_instructions', 'tdMedium') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, Medium
@@ -156,7 +178,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdHigh') }}
+								{{ Form::radio('drying_instructions', 'tdHigh') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, High
@@ -165,7 +187,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdNoHeatPerm') }}
+								{{ Form::radio('drying_instructions', 'tdNoHeatPerm') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, Permanent Press, No Heat
@@ -174,7 +196,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdLowHeatPerm') }}
+								{{ Form::radio('drying_instructions', 'tdLowHeatPerm') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, Permanent Press, Low Heat
@@ -183,7 +205,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdMediumPerm') }}
+								{{ Form::radio('drying_instructions', 'tdMediumPerm') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, Permanent Press, Medium
@@ -192,7 +214,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdNoHeatGentle') }}
+								{{ Form::radio('drying_instructions', 'tdNoHeatGentle') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, Gentle Cycle, No Heat
@@ -201,7 +223,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdLowHeatGentle') }}
+								{{ Form::radio('drying_instructions', 'tdLowHeatGentle') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, Gentle Cycle, Low Heat
@@ -210,7 +232,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'tdMediumGentle') }}
+								{{ Form::radio('drying_instructions', 'tdMediumGentle') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Tumble Dry, Gentle Cycle, Medium
@@ -219,7 +241,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'lineDry') }}
+								{{ Form::radio('drying_instructions', 'lineDry') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Line Dry
@@ -228,7 +250,7 @@
 						</div>
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'dripDry') }}
+								{{ Form::radio('drying_instructions', 'dripDry') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Drip Dry
@@ -237,7 +259,7 @@
 						</div>	
 						<div class="radio radio-primary">
 							<label>
-								{{ Form::radio('dry', 'dryFlat') }}
+								{{ Form::radio('drying_instructions', 'dryFlat') }}
 								<span class="circle"></span>
 								<span class="check"></span>
 								Dry Flat

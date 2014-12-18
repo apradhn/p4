@@ -44,7 +44,7 @@ class ItemController extends \BaseController {
 
         # Try to add the item 
         try {
-            $user->save();
+            $item->save();
         }
         # Fail
         catch (Exception $e) {
@@ -96,12 +96,21 @@ class ItemController extends \BaseController {
 	 */
 	public function update($id)
 	{
+        # Find the selected item 
+		$item = Item::find($id);        
+
+		# Set
+		$item->name = Input::get('name');
+		$item->washing_instructions = Input::get('washing_instructions');
+		$item->drying_instructions = Input::get('drying_instructions');
+		$item->color = Input::get('color');
+		$item->color_url = Item::getColorURL($item->color);
 
 		# Establish rules of adding an item; all fields required
 		$rules = array(
 			'name' => 'required', 
-			'wash' => 'required',
-			'dry' => 'required',
+			'washing_instructions' => 'required',
+			'drying_instructions' => 'required',
 			'color' => 'required'
 		);
 
@@ -109,34 +118,26 @@ class ItemController extends \BaseController {
 
         if($validator->fails()) {
 
-        	Flash::warning('Item update failed; please fix the errors listed below.');
+#	      	Flash::warning('Item update failed; please fix the errors listed below.');
 
-            return Redirect::to('/item/create')
+#            return Redirect::action('ItemController@edit', array($id))
+	      	return Redirect::back()
+           		->with('flash_warning', 'Item update failed: please fix the errors listed below.')
                 ->withInput()
                 ->withErrors($validator);
         }
 
         # Try to add the item 
         try {
-            $user->save();
+            $item->save();
         }
         # Fail
         catch (Exception $e) {
 
         	Flash::warning('Item update failed; please try again');
 
-            return Redirect::to('/item/create')->withInput();
+            return Redirect::to('/my-closet')->withInput();
         }
-
-        # Find the selected item 
-		$item = Item::find($id);        
-
-		# Set
-		$item->name = Input::get('name');
-		$item->washing_instructions = Input::get('wash');
-		$item->drying_instructions = Input::get('dry');
-		$item->color = Input::get('color');
-		$item->color_url = Item::getColorURL($item->color);
 
 		$item->save();
 
