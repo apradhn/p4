@@ -12,11 +12,12 @@
  	<div class="jumbotron">
 		<div class="container">
 		<h2>T.A.L.O.S.</h2>
-		<p></p>
 		</div>
     </div>
  	<div class="separator">
- 		<div class="col-md-6 col-md-offset-2"><div class="separator-text">My Closet</div></div>
+ 		<div class="col-md-6 col-md-offset-2">
+ 			<div class="separator-text">My Closet</div>
+ 		</div>
  		<div class="col-md-4">
  		<a href="/item/create"><button class="btn btn-primary btn-raised">ADD CLOTHES</button></a>
  		<a href="/search"><button class="btn btn-primary btn-raised">SEARCH</button></a>
@@ -57,7 +58,10 @@
 	@endif
 
 	@if(isset($none))
-		<div class="well col-md-8 col-md-offset-2">{{ $none }}</div>
+		<div class="well col-md-4 col-md-offset-4">
+		<h4 class="none">{{ $none }}</h4>
+		<p class="none">Click "Add Clothes" to add items to your closet</p>
+		</div>
 	@endif
 @stop
 

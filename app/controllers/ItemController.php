@@ -47,9 +47,10 @@ class ItemController extends \BaseController {
 
 		$item->save();
 
-		return Redirect::to('/my-closet')->with('flash_message', 'New item added to closet!');
-	}
+		Flash::success('New item added! Select the items you want to wash, then click "SORT!"');
 
+		return Redirect::to('/my-closet');
+}
 
 	/**
 	 * Display the specified resource.
@@ -96,7 +97,9 @@ class ItemController extends \BaseController {
 
 		$item->save();
 
-		return Redirect::to('/my-closet')->with('flash_message', 'Item Updated!');		
+		Flash::success('Item Updated!');
+
+		return Redirect::to('/my-closet');		
 	}
 
 
@@ -112,7 +115,9 @@ class ItemController extends \BaseController {
 
 		$item->delete();
 
-		return Redirect::to('/my-closet')->with('flash_message', 'Item Updated!');			
+		Flash::warning('Item Deleted!');
+
+		return Redirect::to('/my-closet');			
 	}
 
 	/**

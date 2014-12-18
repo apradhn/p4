@@ -43,12 +43,35 @@
 	    </div>	
 
 	    @yield('masthead')
-	    @if(Session::get('flash_message'))
-	        <div class='alert alert-dismissable alert-info'>
-	        <button type="button" class="close" data-dismiss="alert">x</button>
-	        {{ Session::get('flash_message') }}
-	        </div>
+
+	    @if(Session::has('flash_notification.success'))
+		    <div class="row">
+		        <div class='alert alert-dismissable alert-{{ Session::get('flash_notification.level') }} col-md-8 col-md-offset-2'>
+		        <button type="button" class="close" data-dismiss="alert">x</button>
+		        <span class="flash">{{ Session::get('flash_notification.success') }}</span>
+		        </div>
+		    </div>
 	    @endif
+
+	    @if(Session::has('flash_notification.message'))
+		    <div class="row">
+		        <div class='alert alert-dismissable alert-{{ Session::get('flash_notification.level') }} col-md-8 col-md-offset-2'>
+		        <button type="button" class="close" data-dismiss="alert">x</button>
+		        <span class="flash">{{ Session::get('flash_notification.message') }}</span>
+		        </div>
+		    </div>
+	    @endif
+
+	    @if(Session::has('flash_notification.warning'))
+		    <div class="row">
+		        <div class='alert alert-dismissable alert-{{ Session::get('flash_notification.level') }} col-md-8 col-md-offset-2'>
+		        <button type="button" class="close" data-dismiss="alert">x</button>
+		        <span class="flash">{{ Session::get('flash_notification.warning') }}</span>
+		        </div>
+		    </div>
+	    @endif
+
+
   		<div class="starter-template">
   			@yield('content')
       	</div>

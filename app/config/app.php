@@ -96,6 +96,7 @@ return array(
 	'providers' => array(
 		
 		'Barryvdh\Debugbar\ServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
@@ -189,7 +190,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-		''
+		'Flash' 			=> 'Laracasts\Flash\Flash'
 
 	),
 
