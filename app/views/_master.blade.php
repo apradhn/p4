@@ -52,7 +52,6 @@
   		<div class="starter-template">
   			@yield('content')
       	</div>
-      	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     	<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>   
         <script src="{{ asset('js/ripples.min.js') }}"></script>

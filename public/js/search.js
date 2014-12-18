@@ -1,19 +1,47 @@
-// Getting JSON data as a result letting JS decide where to put the data on the page
+// Performs an AJAX search for Item Name
+$('#search-name').click(function() {
+    $.ajax({
+        type: 'POST',
+        url: '/item/search-name',
+        success: function(response) { 
+            $('#results').html(response);
+        },
+        data: {
+            format: 'html',
+            query: $('input[name=query]').val(),
+            _token: $('input[name=_token]').val(),
+        },
+    }); 
+});
 
-$('#search-json').click(function() {
-	$.ajax({
-		type: 'POST', 
-		url: '/item/search',
-		success: function(response) {
+// Performs an AJAX search for Tags
+$('#search-tag').click(function() {
+    $.ajax({
+        type: 'POST',
+        url: '/item/search-tag',
+        success: function(response) { 
+            $('#results').html(response);
+        },
+        data: {
+            format: 'html',
+            query: $('input[name=query]').val(),
+            _token: $('input[name=_token]').val(),
+        },
+    }); 
+});
 
-			// Clear the results from the last query
-			$('#results').html('');
-
-			// Parse through the response
-			$.each(response, function( index, value ) {
-				var name = response[index]['name'];
-				
-			})
-		}
-	})
-})
+// Performs an AJAX search for Item Color
+$('#search-color').click(function() {
+    $.ajax({
+        type: 'POST',
+        url: '/item/search-color',
+        success: function(response) { 
+            $('#results').html(response);
+        },
+        data: {
+            format: 'html',
+            query: $('input[name=query]').val(),
+            _token: $('input[name=_token]').val(),
+        },
+    }); 
+});

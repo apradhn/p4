@@ -82,22 +82,22 @@ Route::get('/my-closet',
 # RESTful routes for Items 
 
 Route::get('/item', 'ItemController@index');
-
 Route::get('/item/create', 'ItemController@create');
-
 Route::post('/item', 'ItemController@store');
-
 Route::get('/item/{item_id}', 'ItemController@show');
-
 Route::get('/item/{item_id}/edit', 'ItemController@edit');
-
 Route::put('/item/{item_id}', 'ItemController@update');
-
 Route::delete('/item/{item_id}', 'ItemController@destroy');
 
-# Items search
+# Search Routes
 
-Route::post('/item/search', 'ItemController@postSearch'); # Process the search
+Route::get('/search', function() {
+    return View::make('item_search');
+});   
+
+Route::post('/item/search-name', 'ItemController@postSearchName'); # Process the search
+Route::post('/item/search-tag', 'ItemController@postSearchTag');
+Route::post('/item/search-color', 'ItemController@postSearchColor');
 
 /*
 |--------------------------------------------------------------------------

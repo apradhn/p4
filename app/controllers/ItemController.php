@@ -1,6 +1,6 @@
 <?php
 
-class ItemController extends BaseController {
+class ItemController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -115,6 +115,86 @@ class ItemController extends BaseController {
 		return Redirect::to('/my-closet')->with('flash_message', 'Item Updated!');			
 	}
 
+	/**
+	* Ajax Search form
+	* http://localhost/item/search
+	*/
+
+	public function postSearchName() 
+	{
+	    if(Request::ajax()) {
+
+	        $query  = Input::get('query');
+
+	        # We're demoing two possible return formats: JSON or HTML
+	        $format = Input::get('format');
+
+	        # Do the actual query
+	        $items = Item::searchName($query);
+
+	        if($format == 'html') {
+
+	            $results = $items;
+
+	            # Return the HTML/View to JavaScript...
+
+	            $results = View::make('item_search_result')->with('items', $items)->render();
+
+	            return $results;
+	        }
+	    }
+	}
+
+	public function postSearchTag() 
+	{
+	    if(Request::ajax()) {
+
+	        $query  = Input::get('query');
+
+	        # We're demoing two possible return formats: JSON or HTML
+	        $format = Input::get('format');
+
+	        # Do the actual query
+	        $items = Item::searchTag($query);
+
+	        if($format == 'html') {
+
+	            $results = $items;
+
+	            # Return the HTML/View to JavaScript...
+
+	            $results = View::make('item_search_result')->with('items', $items)->render();
+
+	            return $results;
+	        }
+	    }
+	}
+
+
+	public function postSearchColor() 
+	{
+	    if(Request::ajax()) {
+
+	        $query  = Input::get('query');
+
+	        # We're demoing two possible return formats: JSON or HTML
+	        $format = Input::get('format');
+
+	        # Do the actual query
+	        $items = Item::searchColor($query);
+
+	        if($format == 'html') {
+
+	            $results = $items;
+
+	            # Return the HTML/View to JavaScript...
+
+	            $results = View::make('item_search_result')->with('items', $items)->render();
+
+	            return $results;
+	        }
+	    }
+	}
 
 
 }

@@ -71,5 +71,44 @@ class Item extends Eloquent {
 		return $colorURL;		
 
 	}
+
+	/**
+    * Search among items
+    * @return Collection
+    */
+
+	public static function searchName($query) {
+        $user = Auth::user()->id;
+
+        $items = Item::where('user_id', '=', $user)
+        	->where('name', 'LIKE', "%$query%")	
+        	->get();
+
+        return $items;	
+	}
+
+	public static function searchTag($query) {
+        $user = Auth::user()->id;
+
+        $items = Item::with('tags')
+        	->where('user_id', '=', $user)
+        	->whereHas('tags', function($q) use ($query) {
+        		$q->where('name', 'LIKE', "%$query%");
+        	})	
+        	->get();
+
+        return $items;	
+	}
+
+	public static function searchColor($query) {
+        $user = Auth::user()->id;
+
+        $items = Item::where('user_id', '=', $user)
+        	->where('color', 'LIKE', "%$query%")
+        	->get();
+
+        return $items;	
+	}
+
 }
 

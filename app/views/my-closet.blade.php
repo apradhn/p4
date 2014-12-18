@@ -19,38 +19,32 @@
  		<div class="col-md-6 col-md-offset-2"><div class="separator-text">My Closet</div></div>
  		<div class="col-md-4">
  		<a href="/item/create"><button class="btn btn-primary btn-raised">ADD CLOTHES</button></a>
+ 		<a href="/search"><button class="btn btn-primary btn-raised">SEARCH</button></a>
  		</div>
  	</div>   	
 @stop
 
 @section ('content')
-<!-- 
-	<label for="query">Search:</label>
-	<input type="text" id="query" value="item"><br><br>
 
-	{{ Form::token() }} 
-
-	<button id="search-json">Search and get JSON back</button><br><br>
-	<button id="search-html">Search and get HTML back</button>
-	<div id="results"></div>
---> 
-
-	@if(isset($items))
+	@if(isset($items))		
 		{{ Form::open(array('url' => '/sort-laundry', 'method' => 'POST', 'class' => 'form-horizontal')) }}
 			@foreach ($items as $item)
 				<div class="well col-md-8 col-md-offset-2">
 
 					<img class="swatch" src="{{ asset($item->color_url) }}">
 					
-					<span class="item-name">{{ $item->name; }}</span>
-					@foreach ( $item->tags as $tag)
-						<small class="tag">{{ $tag->name }}</small>
-					@endforeach
-					
+					<div class="item">
+						<span class="item-name">{{ $item->name; }}</span>	
+						<br> 					
+						@foreach ( $item->tags as $tag)
+							<small class="tag">{{ $tag->name }}</small>
+						@endforeach
+					</div>
+
 					<div class="modify-buttons">
 						<a class ="btn btn-default" href="/item/{{ $item->id }}/edit">EDIT</a>
 						<a class="btn btn-default" href="/tag/{{ $item->id }}/create">ADD TAGS</a>
-					<span class="checkbox item-checkbox">
+						<span class="checkbox item-checkbox">
 							<label>
 								{{ Form::checkbox($item->id, $item->name) }}
 							</label>
@@ -67,6 +61,3 @@
 	@endif
 @stop
 
-@section ('footer') 
-	<script src="/js/search.js"></script>
-@stop
