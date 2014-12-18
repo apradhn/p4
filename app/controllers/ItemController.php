@@ -3,17 +3,6 @@
 class ItemController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-
-	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
@@ -31,7 +20,39 @@ class ItemController extends \BaseController {
 	 */
 	public function store()
 	{
+		# Remember the current user, so Item is user-specific
 		$user = Auth::user();
+
+		# Establish rules of adding an item; all fields required
+		$rules = array(
+			'name' => 'required', 
+			'wash' => 'required',
+			'dry' => 'required',
+			'color' => 'required'
+		);
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if($validator->fails()) {
+
+        	Flash::warning('Item creation failed; please fix the errors listed below.');
+
+            return Redirect::to('/item/create')
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+        # Try to add the item 
+        try {
+            $user->save();
+        }
+        # Fail
+        catch (Exception $e) {
+
+        	Flash::warning('Sign up failed; please try again');
+
+            return Redirect::to('/item/create')->withInput();
+        }
 
 		# Instantiate a new Item model class 
 		$item = new Item(); 
@@ -47,6 +68,7 @@ class ItemController extends \BaseController {
 
 		$item->save();
 
+		# Return to My Closet 
 		Flash::success('New item added! Select the items you want to wash, then click "SORT!"');
 
 		return Redirect::to('/my-closet');

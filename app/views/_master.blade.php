@@ -45,34 +45,28 @@
 	    @yield('masthead')
 
 	    @if(Session::has('flash_notification.success'))
-		    <div class="row">
-		        <div class='alert alert-dismissable alert-{{ Session::get('flash_notification.level') }} col-md-8 col-md-offset-2'>
+	        <div class='alert alert-dismissable alert-{{ Session::get('flash_notification.level') }} col-md-4 col-md-offset-4'>
 		        <button type="button" class="close" data-dismiss="alert">x</button>
 		        <span class="flash">{{ Session::get('flash_notification.success') }}</span>
-		        </div>
-		    </div>
+	        </div>
 	    @endif
 
 	    @if(Session::has('flash_notification.message'))
-		    <div class="row">
-		        <div class='alert alert-dismissable alert-{{ Session::get('flash_notification.level') }} col-md-8 col-md-offset-2'>
+	        <div class='alert alert-dismissable alert-{{ Session::get('flash_notification.level') }} col-md-4 col-md-offset-4'>
 		        <button type="button" class="close" data-dismiss="alert">x</button>
 		        <span class="flash">{{ Session::get('flash_notification.message') }}</span>
-		        </div>
-		    </div>
+	        </div>
 	    @endif
 
 	    @if(Session::has('flash_notification.warning'))
-		    <div class="row">
-		        <div class='alert alert-dismissable alert-{{ Session::get('flash_notification.level') }} col-md-8 col-md-offset-2'>
+	        <div class='alert alert-dismissable alert-{{ Session::get('flash_notification.level') }} col-md-4 col-md-offset-4'>
 		        <button type="button" class="close" data-dismiss="alert">x</button>
 		        <span class="flash">{{ Session::get('flash_notification.warning') }}</span>
-		        </div>
-		    </div>
+	        </div>
 	    @endif
 
-
   		<div class="starter-template">
+  			@yield('errors')
   			@yield('content')
       	</div>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

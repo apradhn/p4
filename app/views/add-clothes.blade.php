@@ -19,6 +19,19 @@
  	</div>   	
 @stop
 
+@section('errors')
+	<div class="col-md-8 col-md-offset-2">
+		@foreach($errors->all() as $message) 
+			<div class="col-md-4">
+			    <div class='alert alert-dismissable alert-danger'>
+			    	<button type="button" class="close" data-dismiss="alert">×</button>
+			    	{{ $message }}
+			    </div>
+		    </div>
+		@endforeach	
+	</div>
+@stop
+
 @section ('content')
 	<div class="col-md-8 col-md-offset-2 well">
 		{{ Form::open(array('url' => '/item', 'method' => 'POST', 'name' => 'add-clothes', 'class' => 'form-horizontal')) }}
