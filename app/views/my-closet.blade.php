@@ -11,7 +11,7 @@
 @section ('masthead')
  	<div class="jumbotron">
 		<div class="container">
-		<h2>T.A.L.O.S.</h2>
+			<h2>T.A.L.O.S.</h2>
 		</div>
     </div>
  	<div class="separator">
@@ -19,8 +19,8 @@
  			<div class="separator-text">My Closet</div>
  		</div>
  		<div class="col-md-4">
- 		<a href="/item/create"><button class="btn btn-primary btn-raised">ADD CLOTHES</button></a>
- 		<a href="/search"><button class="btn btn-primary btn-raised">SEARCH</button></a>
+ 		<a href="/item/create"><button class="btn btn-primary">ADD CLOTHES</button></a>
+ 		<a href="/search"><button class="btn btn-primary">SEARCH</button></a>
  		</div>
  	</div>   	
 @stop

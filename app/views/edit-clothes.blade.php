@@ -12,14 +12,12 @@
  	<div class="jumbotron">
 		<div class="container">
 		<h2>T.A.L.O.S.</h2>
-		<div class="back">
-			<a href="/my-closet"><i class="mdi-navigation-arrow-back"></i> My Closet</a>
-		</div>
 		</div>
     </div>
  	<div class="separator">
- 		<div class="col-md-6 col-md-offset-2"><div class="separator-text">Edit Clothes</div></div>
+ 		<div class="col-md-5 col-md-offset-2"><div class="separator-text">Edit Clothes</div></div> 		
  		<div class="col-md-4">
+ 		 	<a href="/my-closet"><button class="btn btn-primary">MY CLOSET</button></a>
 			<div class="delete">
 				{{ Form::open(['method' => 'DELETE', 'action' => ['ItemController@destroy', $item->id]])}}
 					{{ Form::submit('DELETE', array('class' => 'btn btn-danger')) }}	

@@ -49,7 +49,7 @@ class ItemController extends \BaseController {
         # Fail
         catch (Exception $e) {
 
-        	Flash::warning('Sign up failed; please try again');
+        	Flash::warning('Item creation failed; please try again');
 
             return Redirect::to('/item/create')->withInput();
         }
@@ -109,7 +109,7 @@ class ItemController extends \BaseController {
 
         if($validator->fails()) {
 
-        	Flash::warning('Item creation failed; please fix the errors listed below.');
+        	Flash::warning('Item update failed; please fix the errors listed below.');
 
             return Redirect::to('/item/create')
                 ->withInput()
@@ -123,7 +123,7 @@ class ItemController extends \BaseController {
         # Fail
         catch (Exception $e) {
 
-        	Flash::warning('Sign up failed; please try again');
+        	Flash::warning('Item update failed; please try again');
 
             return Redirect::to('/item/create')->withInput();
         }

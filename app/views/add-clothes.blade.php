@@ -11,11 +11,14 @@
 @section ('masthead')
  	<div class="jumbotron">
 		<div class="container">
-		<h2>T.A.L.O.S.</h2>
-		</div>
+			<h2>T.A.L.O.S.</h2>
+		</div>		
     </div>
  	<div class="separator">
  		<div class="separator-text col-md-6 col-md-offset-1">Add Clothes</div>
+  		<div class="col-md-4">
+ 			<a href="/my-closet"><button class="btn btn-primary btn-raised">MY CLOSET</button></a>
+ 		</div>		
  	</div>   	
 @stop
 

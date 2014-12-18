@@ -19,7 +19,7 @@
  	<div class="separator">
  		<div class="col-md-6 col-md-offset-2"><div class="separator-text">Search</div></div>
  		<div class="col-md-4">
- 		<a href="/my-closet"><button class="btn btn-primary btn-raised">MY CLOSET</button></a>
+ 			<a href="/my-closet"><button class="btn btn-primary btn-raised">MY CLOSET</button></a>
  		</div>
  	</div>   	
 @stop
